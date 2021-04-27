@@ -33,7 +33,6 @@ public class JitCompilerBenchmarks {
     }
 
     @Benchmark
-    @OutputTimeUnit(TimeUnit.MILLISECONDS)
     public Double extractOperationOutOfLoop(SimplePlan state) {
         double sum = 0;
         double result = 0;
@@ -50,7 +49,6 @@ public class JitCompilerBenchmarks {
     }
 
     @Benchmark
-    @OutputTimeUnit(TimeUnit.MILLISECONDS)
     public String redundantCode(SimplePlan state) {
         final String firstChar = "1";
         final StringBuilder firstChars = new StringBuilder();
