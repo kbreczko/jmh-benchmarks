@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class LevenshteinDistanceBenchmark {
 
     @State(Scope.Benchmark)
-    private static class Plan {
+    public static class Plan {
         public String value1;
         public String value2;
 
