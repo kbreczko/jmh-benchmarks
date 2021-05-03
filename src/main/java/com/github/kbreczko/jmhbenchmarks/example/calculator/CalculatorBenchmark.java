@@ -1,4 +1,4 @@
-package com.github.kbreczko.jmhbenchmarks.example.magic;
+package com.github.kbreczko.jmhbenchmarks.example.calculator;
 
 import org.openjdk.jmh.annotations.*;
 
@@ -13,7 +13,7 @@ import java.util.stream.DoubleStream;
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-public class MagicBenchmark {
+public class CalculatorBenchmark {
 
     @State(Scope.Benchmark)
     public static class SumPlan {
@@ -26,12 +26,12 @@ public class MagicBenchmark {
                     .mapToObj(BigDecimal::new)
                     .limit(10_000)
                     .collect(Collectors.toList());
-            this.sum = BigDecimal.valueOf(499_955_000);
+            this.sum = BigDecimal.valueOf(500_000_000);
         }
     }
 
     @Benchmark
-    public BigDecimal doMagic(SumPlan state) {
+    public BigDecimal sumBigDecimals(SumPlan state) {
         final Calculator calculator = new Calculator(state.sum);
         return calculator.sum(state.numbers);
     }

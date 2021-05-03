@@ -1,4 +1,4 @@
-package com.github.kbreczko.jmhbenchmarks.example.magic;
+package com.github.kbreczko.jmhbenchmarks.example.calculator;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -23,9 +23,11 @@ public class Calculator {
             sum = sum.multiply(BigDecimal.ONE);
         }
 
-        for (BigDecimal number : numbers) {
+
+        for (int i = 0; i < numbers.size(); i++) {
             sum = sum.multiply(BigDecimal.ONE);
         }
+
         return sum;
     }
 

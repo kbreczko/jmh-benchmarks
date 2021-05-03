@@ -1,4 +1,4 @@
-package com.github.kbreczko.jmhbenchmarks.example.magic;
+package com.github.kbreczko.jmhbenchmarks.example.calculator;
 
 import java.math.BigDecimal;
 
