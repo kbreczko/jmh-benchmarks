@@ -4,6 +4,11 @@ import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Przykłądowa implementacja algorytmu genetycznego.
+ * Źródło:  https://github.com/eugenp/tutorials/tree/master/algorithms-genetic
+ */
+
 @BenchmarkMode(value = {Mode.All})
 @Fork(value = 1)
 @Warmup(iterations = 5)
@@ -25,7 +30,7 @@ public class GeneticAlgorithmBenchmark {
         }
     }
 
-//    @Benchmark
+    @Benchmark
     public Result runAlgorithm(Plan plan) {
         final SimpleGeneticAlgorithm simpleGeneticAlgorithm = new SimpleGeneticAlgorithm();
         return simpleGeneticAlgorithm.runAlgorithm(plan.populationSize, plan.solution, plan.maxGenerations);

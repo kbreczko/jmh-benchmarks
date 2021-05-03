@@ -9,6 +9,10 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+
+/**
+ * Zbiór testów utworzonych pod optymalizację kodu przez kompilator JIT.
+ */
 @BenchmarkMode(value = {Mode.All})
 @Fork(value = 1)
 @Warmup(iterations = 5)
@@ -19,27 +23,46 @@ public class JitCompilerBenchmarks {
     @State(Scope.Benchmark)
     public static class SimplePlan {
         public List<Integer> numbers;
-        public int sum;
+        public long sum;
         public int iterations;
+        public int integerMaxValue;
 
         @Setup(Level.Iteration)
         public void setUp() {
-            this.numbers = IntStream.range(0, 100_000)
+            this.numbers = IntStream.range(0, 250_000_000)
+                    .map(value -> ThreadLocalRandom.current().nextInt(10) + 1)
                     .boxed()
                     .collect(Collectors.toList());
-            this.sum = Integer.MAX_VALUE;
+            this.sum = Long.MAX_VALUE;
             this.iterations = 1_000_000;
+            this.integerMaxValue = Integer.MAX_VALUE;
         }
     }
 
+    private static class RandomNumber {
+        private final int number;
+
+        public RandomNumber() {
+            this.number = ThreadLocalRandom.current().nextInt(10);
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+    }
+
+    /**
+     * Cel: Wyciągnięcie wyrażeń poza pętle
+     */
     @Benchmark
-    public Double extractOperationOutOfLoop(SimplePlan state) {
+    public double extractOperationOutOfLoop(SimplePlan state) {
         double sum = 0;
         double result = 0;
         double x = 100;
         for (int i = 1; i < state.iterations; i++) {
-            double v1 = Math.log((i + 1) * x) + Math.log(x);
-            double v2 = 2 + Math.log((i + 1) * x) * Math.log(x);
+            double v1 = (Math.log((i + 1) * x) + Math.log(x)) * 2;
+            double v2 = Math.log((i + 1) * x) * Math.log(x);
             sum += v1 / v2;
             if (i == state.iterations - 1) {
                 result = Math.log(sum);
@@ -48,9 +71,11 @@ public class JitCompilerBenchmarks {
         return result;
     }
 
+    /**
+     * Cel: Usunięcie nieużywanego kodu
+     */
     @Benchmark
     public String redundantCode(SimplePlan state) {
-        final String firstChar = "1";
         final StringBuilder firstChars = new StringBuilder();
         for (Integer number : state.numbers) {
             final Integer searched = search(state.numbers, number);
@@ -78,44 +103,62 @@ public class JitCompilerBenchmarks {
         return stringSupplier.get();
     }
 
+    /**
+     * Cel: Usunięcie zawsze prawdziwych warunków
+     */
     @Benchmark
-    public int eliminateConditionsAlwaysTrue(SimplePlan state) {
-        int sum = 0;
+    public long eliminateConditionsAlwaysTrue(SimplePlan state) {
+        long sum = 0;
         for (Integer number : state.numbers) {
-            if (number < state.sum) {
-                if(number > Integer.MIN_VALUE){
-                    if (number < state.sum) {
-                        if(number > Integer.MIN_VALUE){
-                            sum = number + sum;
-                        }
-                    }
+            if (number == null) {
+                return Integer.MIN_VALUE;
+            }
+
+            if (number > state.sum && number < Integer.MAX_VALUE) {
+                return number;
+            }
+
+            if (number < Integer.MIN_VALUE) {
+                return Integer.MIN_VALUE;
+            }
+
+            if (sum < Long.MAX_VALUE) {
+                if (sum > Long.MIN_VALUE) {
+                    sum = number + sum;
                 }
             }
+
         }
         return sum;
     }
 
+    /**
+     * Cel: zredukowanie pętli
+     */
     @Benchmark
     public long reduceLoops(SimplePlan state) {
         long sum1 = 0;
         long sum2 = 0;
         long sum3 = 0;
         long iterations = 0;
-        for (int i = 1; i < state.iterations; i++) {
+        for (int i = 1; i < state.integerMaxValue; i++) {
             sum1 = i + 1;
         }
-        for (int i = 1; i < state.iterations; i++) {
+        for (int i = 1; i < state.integerMaxValue; i++) {
             sum2 += i;
         }
-        for (int i = 1; i < state.iterations; i++) {
+        for (int i = 1; i < state.integerMaxValue; i++) {
             sum3 -= i;
         }
-        for (int i = 1; i < state.iterations; i++) {
+        for (int i = 1; i < state.integerMaxValue; i++) {
             iterations = i;
         }
         return iterations / (sum1 + sum2 + sum3);
     }
 
+    /**
+     * Sumuje wygenerowane liczby w oddzielnych blokach synchronicznych. Cel: Zredukowanie bloków synchronicznych.
+     */
     @Benchmark
     public long reduceSynchronizedBlocks() {
         long result = 0;
@@ -143,5 +186,20 @@ public class JitCompilerBenchmarks {
         }
 
         return result;
+    }
+
+    /**
+     * Tworzy nowe instancje wewnątrz w scope i sumuje losowa wartości. Cel: optymalizacja na podstawie krótkiego czasu życia obiektu
+     * i dostępność w małych scopie.
+     */
+    @Benchmark
+    public long reduceYoungObjects(SimplePlan state) {
+        long sum = 0;
+        for (int i = 0; i < state.iterations; i++) {
+            final RandomNumber randomNumber1 = new RandomNumber();
+            final RandomNumber randomNumber2 = new RandomNumber();
+            sum += randomNumber1.getNumber() + randomNumber2.getNumber();
+        }
+        return sum;
     }
 }

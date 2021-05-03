@@ -4,6 +4,10 @@ import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Implementacja algorytmu fibonacciego za pomocą rekurencji ogonowej.
+ */
+
 @BenchmarkMode({Mode.All})
 @Fork(value = 1)
 @Warmup(iterations = 5)
@@ -13,12 +17,12 @@ public class FibonacciBenchmark {
 
     @State(Scope.Benchmark)
     public static class FibonacciPlan {
-        @Param({"43", "199", "521"})
+        @Param({"521", "1153", "2021"})
         public int iterations;
     }
 
     @Benchmark
-    public long test(FibonacciPlan fibonacciPlan) {
+    public long runFibonacci(FibonacciPlan fibonacciPlan) {
         return fib(fibonacciPlan.iterations, 0, 1);
     }
 

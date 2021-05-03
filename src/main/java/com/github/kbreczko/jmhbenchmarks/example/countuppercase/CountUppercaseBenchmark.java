@@ -5,6 +5,9 @@ import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Zliczanie N razy wielkich liter ciągu znaków (string) przekazanego poprzez argument.
+ */
 @BenchmarkMode(value = {Mode.All})
 @Fork(value = 1)
 @Warmup(iterations = 5)
@@ -15,11 +18,15 @@ public class CountUppercaseBenchmark {
     @State(Scope.Benchmark)
     public static class Plan {
         String value;
+
         int iterations;
+
+        @Param({"100", "1000"})
+        int length;
 
         @Setup(Level.Iteration)
         public void setUp() {
-            value = RandomString.randomString(100);
+            value = RandomString.randomString(length);
             iterations = 1_000_000;
         }
     }
