@@ -1,13 +1,11 @@
 package com.github.kbreczko.jmhbenchmarks.benchmarks.stream;
 
-import com.sun.xml.internal.ws.util.StreamUtils;
 import org.apache.commons.math3.util.Pair;
 import org.openjdk.jmh.annotations.*;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -37,7 +35,7 @@ public class StreamBenchmark {
 
     @Benchmark
     public List<Integer> sort(Plan plan) {
-        return  Arrays.stream(plan.array)
+        return Arrays.stream(plan.array)
                 .sorted()
                 .boxed()
                 .collect(Collectors.toList());
@@ -45,7 +43,7 @@ public class StreamBenchmark {
 
     @Benchmark
     public List<Pair<Integer, Integer>> mapToPair(Plan plan) {
-       return IntStream.range(0, plan.array.length)
+        return IntStream.range(0, plan.array.length)
                 .boxed()
                 .map(index -> new Pair<>(index, plan.array[index]))
                 .collect(Collectors.toList());
@@ -53,7 +51,7 @@ public class StreamBenchmark {
 
     @Benchmark
     public List<Integer> plusOne(Plan plan) {
-        return  Arrays.stream(plan.array)
+        return Arrays.stream(plan.array)
                 .map(number -> number + 1)
                 .boxed()
                 .collect(Collectors.toList());
