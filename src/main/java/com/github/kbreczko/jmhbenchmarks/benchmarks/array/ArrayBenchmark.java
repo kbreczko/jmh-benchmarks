@@ -27,7 +27,7 @@ public class ArrayBenchmark {
         @Setup(Level.Iteration)
         public void setUp() {
             Random rn = new Random();
-            array = IntStream.range(0, 250_000_000)
+            array = IntStream.range(0, 1_000_000)
                     .map(value -> rn.nextInt(10) + 1)
                     .toArray();
             element = Integer.MAX_VALUE / 2;
@@ -35,7 +35,7 @@ public class ArrayBenchmark {
 
         @Setup(Level.Trial)
         public void setUpTrial() {
-            unsortedArray = IntStream.range(0, 250_000_000)
+            unsortedArray = IntStream.range(0, 1_000_000)
                     .map(value -> ThreadLocalRandom.current().nextInt())
                     .toArray();
         }

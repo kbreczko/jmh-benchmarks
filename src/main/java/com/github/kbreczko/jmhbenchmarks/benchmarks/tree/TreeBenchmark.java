@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Drzewo jest zrównoważonym drzewem binarnym, w którym każdy wierzchołem zajmuje conajmniej 1KB danych.
- * Pojedyńcze drzewo ma 1024 dzieci + 1023 rodziców co nam daje około 2MB danych.
- * Podczas iteracji głównej pętli for tworzymy 1024 drzew, czyli powinno zaalokować conajmniej połowe pamięci RAM z 4GB, czyli 2GB.
+ * Test ma na celu sprawdzić wydajność modułów GC, podczas obiektów głęboko zagniżdżonych.
+ * Drzewo jest zrównoważonym drzewem binarnym, w którym każdy wierzchołem zajmuje conajmniej 512B danych.
+ * Pojedyńcze drzewo ma 1024 dzieci + 1023 rodziców.
+ * Podczas iteracji głównej pętli for tworzymy 1024 drzew.
  */
 
 @BenchmarkMode(value = {Mode.All})
@@ -48,18 +49,34 @@ public class TreeBenchmark {
 
         public static Product createRecursive(int total) {
             if (total <= 1) {
-                return new Product(null, null, total, new byte[1024]);
+                return new Product(null, null, total, new byte[512]);
             }
 
             final Product product1 = Product.createRecursive((total / 2));
             final Product product2 = Product.createRecursive((total / 2));
-            return new Product(product1, product2, total, new byte[1024]);
+            return new Product(product1, product2, total, new byte[512]);
+        }
+
+        public Product getProduct1() {
+            return product1;
+        }
+
+        public Product getProduct2() {
+            return product2;
+        }
+
+        public int getTotal() {
+            return total;
+        }
+
+        public byte[] getBytes() {
+            return bytes;
         }
     }
 
     @Benchmark
     public void createNewObjectsWithRecursive(Plan plan, Blackhole blackhole) {
-        for (int iter = 0; iter < 4; iter++) {
+        for (int iter = 0; iter < 2; iter++) {
             List<Product> objects = new ArrayList<>(plan.numberOfObjects);
             for (int i = 0; i < plan.numberOfObjects; i++) {
                 objects.add(Product.createRecursive(plan.size));

@@ -2,9 +2,7 @@ package com.github.kbreczko.jmhbenchmarks.benchmarks.split;
 
 import org.openjdk.jmh.annotations.*;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
@@ -25,7 +23,7 @@ public class SplittingListBenchmark {
 
         @Setup(Level.Iteration)
         public void setUp() {
-            numbers = IntStream.range(0, 250_000_000)
+            numbers = IntStream.range(0, 1_000_000)
                     .map(value -> ThreadLocalRandom.current().nextInt())
                     .toArray();
         }
@@ -42,22 +40,22 @@ public class SplittingListBenchmark {
         return result;
     }
 
-    private <T> Set<T> toSet(T v1, T v2, T v3, T v4, T v5, T v6, T v7, T v8, T v9, T v10) {
-        return Set.of(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10);
-    }
-
 //    private <T> Set<T> toSet(T v1, T v2, T v3, T v4, T v5, T v6, T v7, T v8, T v9, T v10) {
-//        Set<T> set = new HashSet<>();
-//        set.add(v1);
-//        set.add(v2);
-//        set.add(v3);
-//        set.add(v4);
-//        set.add(v5);
-//        set.add(v6);
-//        set.add(v7);
-//        set.add(v8);
-//        set.add(v9);
-//        set.add(v10);
-//        return Collections.unmodifiableSet(set);
+//        return Set.of(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10);
 //    }
+
+    private <T> Set<T> toSet(T v1, T v2, T v3, T v4, T v5, T v6, T v7, T v8, T v9, T v10) {
+        Set<T> set = new HashSet<>();
+        set.add(v1);
+        set.add(v2);
+        set.add(v3);
+        set.add(v4);
+        set.add(v5);
+        set.add(v6);
+        set.add(v7);
+        set.add(v8);
+        set.add(v9);
+        set.add(v10);
+        return Collections.unmodifiableSet(set);
+    }
 }

@@ -29,7 +29,7 @@ public class JitCompilerBenchmarks {
 
         @Setup(Level.Iteration)
         public void setUp() {
-            this.numbers = IntStream.range(0, 250_000_000)
+            this.numbers = IntStream.range(0, 1_000_000)
                     .map(value -> ThreadLocalRandom.current().nextInt(10) + 1)
                     .boxed()
                     .collect(Collectors.toList());
