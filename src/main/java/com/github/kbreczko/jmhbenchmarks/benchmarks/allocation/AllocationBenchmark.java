@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * Celem testu wydajnościowego jest zapełnienie 60% sterty obiektami o rozmiarach: 1KB, 10KB, 100KB, 1MB, 10MB i 100MB.
+ * Celem testu wydajnościowego jest zapełnienie 65% sterty obiektami o rozmiarach: 1KB, 10KB, 100KB, 1MB, 10MB i 100MB.
  * Celem jest porównanie modułów GC.
  */
 @BenchmarkMode(value = {Mode.All})
@@ -18,6 +18,13 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 15)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 public class AllocationBenchmark {
+
+    @Benchmark
+    public void createNewObjects(Plan plan, Blackhole blackhole) {
+        for (int i = 0; i < plan.numberOfObjects; i++) {
+            blackhole.consume(new byte[plan.size]);
+        }
+    }
 
     @State(Scope.Benchmark)
     public static class Plan {
@@ -29,23 +36,12 @@ public class AllocationBenchmark {
         @Setup(Level.Iteration)
         public void setUp() {
             final long maxHeap = this.convertGigaByteToByte(2);
-            numberOfObjects = (int) ((maxHeap * 0.60) / size);
+            numberOfObjects = (int) ((maxHeap * 0.65) / size);
         }
 
         private long convertGigaByteToByte(int sizeInGigaBytes) {
             return ((sizeInGigaBytes * 1024L) * 1024L) * 1024L;
         }
-    }
-
-    @Benchmark
-    public byte[] createNewObjects(Plan plan, Blackhole blackhole) {
-        byte[] result = new byte[1];
-        for (int i = 0; i < plan.numberOfObjects; i++) {
-            final byte[] bytes = new byte[plan.size];
-            blackhole.consume(bytes);
-            result = bytes;
-        }
-        return result;
     }
 
     @Benchmark
