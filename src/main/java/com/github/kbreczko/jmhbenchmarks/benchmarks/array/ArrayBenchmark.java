@@ -35,7 +35,7 @@ public class ArrayBenchmark {
 
         @Setup(Level.Trial)
         public void setUpTrial() {
-            unsortedArray = IntStream.range(0, 1_000_000)
+            unsortedArray = IntStream.range(0, 1000)
                     .map(value -> ThreadLocalRandom.current().nextInt())
                     .toArray();
         }
