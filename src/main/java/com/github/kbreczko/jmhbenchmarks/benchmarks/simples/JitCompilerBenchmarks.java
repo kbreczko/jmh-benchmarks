@@ -55,7 +55,7 @@ public class JitCompilerBenchmarks {
     /**
      * Cel: Wyciągnięcie wyrażeń poza pętle
      */
-    @Benchmark
+    //@Benchmark
     public double extractOperationOutOfLoop(SimplePlan state) {
         double sum = 0;
         double result = 0;
@@ -74,7 +74,7 @@ public class JitCompilerBenchmarks {
     /**
      * Cel: Usunięcie nieużywanego kodu
      */
-    @Benchmark
+    //@Benchmark
     public String redundantCode(SimplePlan state) {
         final StringBuilder firstChars = new StringBuilder();
         for (Integer number : state.numbers) {
@@ -106,7 +106,7 @@ public class JitCompilerBenchmarks {
     /**
      * Cel: Usunięcie zawsze prawdziwych warunków
      */
-    @Benchmark
+    //@Benchmark
     public long eliminateConditionsAlwaysTrue(SimplePlan state) {
         long sum = 0;
         for (Integer number : state.numbers) {
@@ -135,7 +135,7 @@ public class JitCompilerBenchmarks {
     /**
      * Cel: zredukowanie pętli
      */
-    @Benchmark
+    //@Benchmark
     public long reduceLoops(SimplePlan state) {
         long sum1 = 0;
         long sum2 = 0;
@@ -159,7 +159,7 @@ public class JitCompilerBenchmarks {
     /**
      * Sumuje wygenerowane liczby w oddzielnych blokach synchronicznych. Cel: Zredukowanie bloków synchronicznych.
      */
-    @Benchmark
+    //@Benchmark
     public long reduceSynchronizedBlocks() {
         long result = 0;
 
@@ -192,7 +192,7 @@ public class JitCompilerBenchmarks {
      * Tworzy nowe instancje wewnątrz w scope i sumuje losowa wartości. Cel: optymalizacja na podstawie krótkiego czasu życia obiektu
      * i dostępność w małych scopie.
      */
-    @Benchmark
+    //@Benchmark
     public long reduceYoungObjects(SimplePlan state) {
         long sum = 0;
         for (int i = 0; i < state.iterations; i++) {

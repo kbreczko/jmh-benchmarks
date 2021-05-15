@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 /**
  * Nowe API z Javy 11 vs Java 8. Test ma na celu przepakowanie listy do niemodyfikowalnych zbiorów 10-elementowych.
  */
-@BenchmarkMode(value = {Mode.All})
+@BenchmarkMode(value = {Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)

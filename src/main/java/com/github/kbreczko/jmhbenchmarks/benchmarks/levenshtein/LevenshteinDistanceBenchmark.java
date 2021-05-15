@@ -30,7 +30,7 @@ public class LevenshteinDistanceBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public int runAlgorithm(Plan plan) {
         return new LevenshteinDistance().calculate(plan.value1, plan.value2);
     }

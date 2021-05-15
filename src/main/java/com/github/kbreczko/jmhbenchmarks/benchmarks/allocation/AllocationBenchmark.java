@@ -9,10 +9,10 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * Celem testu wydajnościowego jest zapełnienie 65% sterty obiektami o rozmiarach: 1KB, 10KB, 100KB, 1MB, 10MB i 100MB.
+ * Celem testu wydajnościowego jest zapełnienie 70% sterty obiektami o rozmiarach: 1KB, 10KB, 100KB, 1MB, 10MB i 100MB.
  * Celem jest porównanie modułów GC.
  */
-@BenchmarkMode(value = {Mode.All})
+@BenchmarkMode(value = {Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)
@@ -28,7 +28,7 @@ public class AllocationBenchmark {
 
     @State(Scope.Benchmark)
     public static class Plan {
-        @Param({"1024", "10240", "102400", "1048576", "10485760", "104857600"}) // 1KB, 10KB, 100KB, 1MB, 10MB, 100MB
+        @Param({"512", "1024", "10240", "102400", "1048576", "10485760", "104857600"}) // 512B, 1KB, 10KB, 100KB, 1MB, 10MB, 100MB
         public int size;
 
         public int numberOfObjects;
@@ -36,7 +36,7 @@ public class AllocationBenchmark {
         @Setup(Level.Iteration)
         public void setUp() {
             final long maxHeap = this.convertGigaByteToByte(2);
-            numberOfObjects = (int) ((maxHeap * 0.65) / size);
+            numberOfObjects = (int) ((maxHeap * 0.7) / size);
         }
 
         private long convertGigaByteToByte(int sizeInGigaBytes) {

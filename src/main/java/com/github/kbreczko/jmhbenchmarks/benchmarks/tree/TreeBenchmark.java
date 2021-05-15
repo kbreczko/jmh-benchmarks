@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * Podczas iteracji głównej pętli for tworzymy 1024 drzew.
  */
 
-@BenchmarkMode(value = {Mode.All})
+@BenchmarkMode(value = {Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)
@@ -76,7 +76,7 @@ public class TreeBenchmark {
 
     @Benchmark
     public void createNewObjectsWithRecursive(Plan plan, Blackhole blackhole) {
-        for (int iter = 0; iter < 2; iter++) {
+        for (int iter = 0; iter < 10; iter++) {
             List<Product> objects = new ArrayList<>(plan.numberOfObjects);
             for (int i = 0; i < plan.numberOfObjects; i++) {
                 objects.add(Product.createRecursive(plan.size));

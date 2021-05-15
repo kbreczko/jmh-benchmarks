@@ -21,7 +21,7 @@ public class FibonacciBenchmark {
         public int iterations;
     }
 
-    @Benchmark
+    //@Benchmark
     public long runFibonacci(FibonacciPlan fibonacciPlan) {
         return fib(fibonacciPlan.iterations, 0, 1);
     }

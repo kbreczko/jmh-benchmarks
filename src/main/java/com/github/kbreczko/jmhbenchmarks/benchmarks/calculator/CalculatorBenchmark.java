@@ -30,7 +30,7 @@ public class CalculatorBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public BigDecimal sumBigDecimals(SumPlan state) {
         final Calculator calculator = new Calculator(state.sum);
         return calculator.sum(state.numbers);

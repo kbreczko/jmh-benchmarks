@@ -41,7 +41,7 @@ public class ArrayBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public long read(Plan plan) {
         long sum = 0;
         for (int i = 0; i < plan.array.length; i++) {
@@ -50,7 +50,7 @@ public class ArrayBenchmark {
         return sum;
     }
 
-    @Benchmark
+    //@Benchmark
     public int[] write(Plan plan) {
         for (int i = 0; i < plan.array.length; i++) {
             plan.array[i] = plan.element;
@@ -58,7 +58,7 @@ public class ArrayBenchmark {
         return plan.array;
     }
 
-    @Benchmark
+    //@Benchmark
     public int[] readAndWrite(Plan plan) {
         for (int i = 0; i < plan.array.length; i++) {
             plan.array[i] = plan.element + plan.array[i];
@@ -66,7 +66,7 @@ public class ArrayBenchmark {
         return plan.array;
     }
 
-    @Benchmark
+    //@Benchmark
     public int[] swap(Plan plan) {
         final int[] unsortedArray = plan.unsortedArray;
         final int length = unsortedArray.length;
