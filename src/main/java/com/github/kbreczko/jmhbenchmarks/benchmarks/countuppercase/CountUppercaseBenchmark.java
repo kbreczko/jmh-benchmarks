@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Zliczanie N razy wielkich liter ciągu znaków (string) przekazanego poprzez argument.
  */
-@BenchmarkMode(value = {Mode.All})
+@BenchmarkMode(value = {Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)

@@ -4,7 +4,7 @@ import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-@BenchmarkMode(value = {Mode.All})
+@BenchmarkMode(value = {Mode.AverageTime, Mode.Throughput})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)

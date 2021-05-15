@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * Źródło:  https://github.com/eugenp/tutorials/tree/master/algorithms-genetic
  */
 
-@BenchmarkMode(value = {Mode.All})
+@BenchmarkMode(value = {Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)

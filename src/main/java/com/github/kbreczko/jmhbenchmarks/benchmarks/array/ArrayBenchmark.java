@@ -11,7 +11,7 @@ import java.util.stream.IntStream;
 /**
  * Testy mają na celu sprawdzenie wydajności aplikacji podczas odczytywania, zapisywania i zamianę elemntów miejscami w tablicy.
  */
-@BenchmarkMode(value = {Mode.All})
+@BenchmarkMode(value = {Mode.Throughput, Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)
