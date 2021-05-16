@@ -1,0 +1,671 @@
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap
+
+# Run progress: 0.00% complete, ETA 00:36:40
+# Fork: 1 of 1
+# Warmup Iteration   1: 0.003 ops/us
+# Warmup Iteration   2: 0.003 ops/us
+# Warmup Iteration   3: 0.003 ops/us
+# Warmup Iteration   4: 0.003 ops/us
+# Warmup Iteration   5: 0.003 ops/us
+Iteration   1: 0.003 ops/us
+Iteration   2: 0.003 ops/us
+Iteration   3: 0.003 ops/us
+Iteration   4: 0.003 ops/us
+Iteration   5: 0.003 ops/us
+Iteration   6: 0.003 ops/us
+Iteration   7: 0.003 ops/us
+Iteration   8: 0.003 ops/us
+Iteration   9: 0.003 ops/us
+Iteration  10: 0.003 ops/us
+Iteration  11: 0.003 ops/us
+Iteration  12: 0.003 ops/us
+Iteration  13: 0.003 ops/us
+Iteration  14: 0.003 ops/us
+Iteration  15: 0.003 ops/us
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap":
+  0.003 ±(99.9%) 0.001 ops/us [Average]
+  (min, avg, max) = (0.003, 0.003, 0.003), stdev = 0.001
+  CI (99.9%): [0.003, 0.003] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 512)
+
+# Run progress: 9.09% complete, ETA 00:33:59
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 2936012
+706165.875 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 2936012
+706941.979 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 2936012
+704083.677 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 2936012
+703487.957 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 2936012
+705315.916 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 2936012
+706904.480 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 2936012
+704851.310 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 2936012
+708146.229 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 2936012
+706406.578 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 2936012
+706671.152 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 2936012
+705330.014 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 2936012
+706407.878 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 2936012
+705657.831 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 2936012
+703603.853 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 2936012
+705832.824 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 2936012
+704442.875 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 2936012
+703371.471 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 2936012
+706962.096 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 2936012
+710526.209 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 2936012
+706275.515 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  706092.688 ±(99.9%) 1907.146 us/op [Average]
+  (min, avg, max) = (703371.471, 706092.688, 710526.209), stdev = 1783.945
+  CI (99.9%): [704185.542, 707999.833] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 1024)
+
+# Run progress: 18.18% complete, ETA 00:31:26
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 1468006
+956263.139 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 1468006
+952368.242 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 1468006
+955935.287 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 1468006
+957463.375 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 1468006
+952677.486 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 1468006
+952009.358 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 1468006
+948380.459 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 1468006
+955440.287 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 1468006
+951335.511 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 1468006
+953573.385 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 1468006
+954789.985 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 1468006
+953723.324 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 1468006
+952677.460 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 1468006
+945535.602 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 1468006
+954066.286 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 1468006
+955426.759 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 1468006
+958419.262 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 1468006
+957827.398 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 1468006
+961543.294 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 1468006
+958522.917 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  954218.086 ±(99.9%) 4350.594 us/op [Average]
+  (min, avg, max) = (945535.602, 954218.086, 961543.294), stdev = 4069.548
+  CI (99.9%): [949867.492, 958568.680] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 2048)
+
+# Run progress: 27.27% complete, ETA 00:28:07
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 734003
+1039860.263 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 734003
+1036807.926 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 734003
+1037318.477 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 734003
+1040069.799 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 734003
+1034033.230 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 734003
+1033972.618 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 734003
+1036055.790 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 734003
+1034571.219 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 734003
+1037218.487 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 734003
+1036376.249 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 734003
+1039694.488 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 734003
+1038159.542 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 734003
+1039865.744 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 734003
+1036101.887 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 734003
+1037161.541 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 734003
+1036594.099 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 734003
+1041622.944 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 734003
+1038882.021 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 734003
+1038430.297 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 734003
+1037202.894 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  1037460.655 ±(99.9%) 2176.428 us/op [Average]
+  (min, avg, max) = (1033972.618, 1037460.655, 1041622.944), stdev = 2035.832
+  CI (99.9%): [1035284.226, 1039637.083] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 10240)
+
+# Run progress: 36.36% complete, ETA 00:24:36
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 146800
+959982.132 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 146800
+960537.857 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 146800
+959733.034 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 146800
+963092.842 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 146800
+962978.430 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 146800
+961678.589 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 146800
+960814.755 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 146800
+961007.685 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 146800
+962126.131 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 146800
+961132.277 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 146800
+961127.421 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 146800
+962822.579 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 146800
+962678.125 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 146800
+959603.720 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 146800
+960001.851 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 146800
+960827.673 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 146800
+961379.724 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 146800
+965009.055 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 146800
+963914.222 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 146800
+962649.565 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  961784.892 ±(99.9%) 1541.289 us/op [Average]
+  (min, avg, max) = (959603.720, 961784.892, 965009.055), stdev = 1441.723
+  CI (99.9%): [960243.602, 963326.181] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 102400)
+
+# Run progress: 45.45% complete, ETA 00:21:10
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 14680
+884907.863 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 14680
+887144.116 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 14680
+883537.952 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 14680
+882688.287 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 14680
+882830.330 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 14680
+886385.067 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 14680
+881723.654 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 14680
+881867.776 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 14680
+884351.077 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 14680
+881227.466 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 14680
+884627.281 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 14680
+882350.741 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 14680
+886902.705 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 14680
+885801.968 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 14680
+883199.856 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 14680
+886120.051 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 14680
+883078.317 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 14680
+884116.036 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 14680
+884349.916 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 14680
+883109.997 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  883947.461 ±(99.9%) 1914.189 us/op [Average]
+  (min, avg, max) = (881227.466, 883947.461, 886902.705), stdev = 1790.534
+  CI (99.9%): [882033.272, 885861.649] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 1048576)
+
+# Run progress: 54.55% complete, ETA 00:17:41
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 1433
+864829.868 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 1433
+864589.980 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 1433
+865160.061 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 1433
+869233.894 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 1433
+867414.892 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 1433
+866601.862 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 1433
+862799.224 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 1433
+864784.354 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 1433
+868607.346 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 1433
+866574.021 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 1433
+861938.734 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 1433
+863973.003 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 1433
+863655.027 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 1433
+862525.509 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 1433
+865059.026 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 1433
+866369.522 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 1433
+863111.943 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 1433
+865316.815 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 1433
+867614.626 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 1433
+865315.626 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  864949.776 ±(99.9%) 2094.664 us/op [Average]
+  (min, avg, max) = (861938.734, 864949.776, 868607.346), stdev = 1959.350
+  CI (99.9%): [862855.112, 867044.440] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 2097152)
+
+# Run progress: 63.64% complete, ETA 00:14:08
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 716
+863672.145 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 716
+865427.398 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 716
+862839.311 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 716
+863285.138 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 716
+864143.845 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 716
+860796.417 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 716
+863288.886 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 716
+863292.635 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 716
+863419.712 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 716
+862665.940 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 716
+861926.184 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 716
+862597.130 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 716
+862236.085 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 716
+861789.506 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 716
+860617.091 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 716
+862750.908 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 716
+862001.222 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 716
+861987.449 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 716
+859697.875 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 716
+864106.360 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  862211.560 ±(99.9%) 1253.373 us/op [Average]
+  (min, avg, max) = (859697.875, 862211.560, 864106.360), stdev = 1172.405
+  CI (99.9%): [860958.187, 863464.932] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 10485760)
+
+# Run progress: 72.73% complete, ETA 00:10:35
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 143
+862517.461 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 143
+860506.411 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 143
+862825.590 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 143
+858834.395 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 143
+863906.993 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 143
+859900.214 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 143
+865489.497 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 143
+863709.913 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 143
+861516.762 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 143
+860370.598 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 143
+861117.068 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 143
+862178.304 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 143
+860896.152 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 143
+860037.387 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 143
+865541.923 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 143
+863976.329 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 143
+859558.283 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 143
+864027.274 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 143
+863738.567 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 143
+861921.815 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  862265.339 ±(99.9%) 2152.870 us/op [Average]
+  (min, avg, max) = (859558.283, 862265.339, 865541.923), stdev = 2013.796
+  CI (99.9%): [860112.469, 864418.209] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
+# Parameters: (size = 104857600)
+
+# Run progress: 81.82% complete, ETA 00:07:03
+# Fork: 1 of 1
+# Warmup Iteration   1: MaxHeap:2147483648, numberOfObjects: 14
+846197.717 us/op
+# Warmup Iteration   2: MaxHeap:2147483648, numberOfObjects: 14
+844702.176 us/op
+# Warmup Iteration   3: MaxHeap:2147483648, numberOfObjects: 14
+843810.975 us/op
+# Warmup Iteration   4: MaxHeap:2147483648, numberOfObjects: 14
+844479.063 us/op
+# Warmup Iteration   5: MaxHeap:2147483648, numberOfObjects: 14
+844725.770 us/op
+Iteration   1: MaxHeap:2147483648, numberOfObjects: 14
+847713.841 us/op
+Iteration   2: MaxHeap:2147483648, numberOfObjects: 14
+844241.838 us/op
+Iteration   3: MaxHeap:2147483648, numberOfObjects: 14
+842789.472 us/op
+Iteration   4: MaxHeap:2147483648, numberOfObjects: 14
+842905.500 us/op
+Iteration   5: MaxHeap:2147483648, numberOfObjects: 14
+844983.441 us/op
+Iteration   6: MaxHeap:2147483648, numberOfObjects: 14
+844892.975 us/op
+Iteration   7: MaxHeap:2147483648, numberOfObjects: 14
+841198.650 us/op
+Iteration   8: MaxHeap:2147483648, numberOfObjects: 14
+839797.655 us/op
+Iteration   9: MaxHeap:2147483648, numberOfObjects: 14
+842399.400 us/op
+Iteration  10: MaxHeap:2147483648, numberOfObjects: 14
+847186.073 us/op
+Iteration  11: MaxHeap:2147483648, numberOfObjects: 14
+844338.645 us/op
+Iteration  12: MaxHeap:2147483648, numberOfObjects: 14
+843578.844 us/op
+Iteration  13: MaxHeap:2147483648, numberOfObjects: 14
+846963.686 us/op
+Iteration  14: MaxHeap:2147483648, numberOfObjects: 14
+844818.760 us/op
+Iteration  15: MaxHeap:2147483648, numberOfObjects: 14
+844142.827 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects":
+  844130.107 ±(99.9%) 2321.391 us/op [Average]
+  (min, avg, max) = (839797.655, 844130.107, 847713.841), stdev = 2171.431
+  CI (99.9%): [841808.716, 846451.498] (assumes normal distribution)
+
+
+# JMH version: 1.29
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
+# VM options: -XX:+UnlockExperimentalVMOptions -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseZGC
+# Blackhole mode: full + dont-inline hint
+# Warmup: 5 iterations, 10 s each
+# Measurement: 15 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap
+
+# Run progress: 90.91% complete, ETA 00:03:31
+# Fork: 1 of 1
+# Warmup Iteration   1: 291.308 us/op
+# Warmup Iteration   2: 290.695 us/op
+# Warmup Iteration   3: 290.311 us/op
+# Warmup Iteration   4: 302.978 us/op
+# Warmup Iteration   5: 301.039 us/op
+Iteration   1: 301.779 us/op
+Iteration   2: 301.252 us/op
+Iteration   3: 301.066 us/op
+Iteration   4: 300.925 us/op
+Iteration   5: 300.910 us/op
+Iteration   6: 301.271 us/op
+Iteration   7: 301.350 us/op
+Iteration   8: 301.374 us/op
+Iteration   9: 301.229 us/op
+Iteration  10: 300.982 us/op
+Iteration  11: 301.178 us/op
+Iteration  12: 301.115 us/op
+Iteration  13: 301.253 us/op
+Iteration  14: 301.361 us/op
+Iteration  15: 301.179 us/op
+
+
+Result "com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap":
+  301.215 ±(99.9%) 0.231 us/op [Average]
+  (min, avg, max) = (300.910, 301.215, 301.779), stdev = 0.216
+  CI (99.9%): [300.984, 301.446] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:38:35
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                                     (size)   Mode  Cnt        Score      Error   Units
+c.g.k.j.b.array.ArrayBenchmark.swap                              N/A  thrpt   15        0.003 ±    0.001  ops/us
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects        512   avgt   15   706092.688 ± 1907.146   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects       1024   avgt   15   954218.086 ± 4350.594   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects       2048   avgt   15  1037460.655 ± 2176.428   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects      10240   avgt   15   961784.892 ± 1541.289   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects     102400   avgt   15   883947.461 ± 1914.189   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects    1048576   avgt   15   864949.776 ± 2094.664   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects    2097152   avgt   15   862211.560 ± 1253.373   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects   10485760   avgt   15   862265.339 ± 2152.870   us/op
+c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects  104857600   avgt   15   844130.107 ± 2321.391   us/op
+c.g.k.j.b.array.ArrayBenchmark.swap                              N/A   avgt   15      301.215 ±    0.231   us/op
