@@ -74,7 +74,7 @@ public class TreeBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public void createNewObjectsWithRecursive(Plan plan, Blackhole blackhole) {
         for (int iter = 0; iter < 10; iter++) {
             List<Product> objects = new ArrayList<>(plan.numberOfObjects);

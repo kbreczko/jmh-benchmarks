@@ -32,7 +32,7 @@ public class StringConcatenationBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public String concatenateStrings(Plan plan) {
         String result = "";
         for (String value : plan.values) {

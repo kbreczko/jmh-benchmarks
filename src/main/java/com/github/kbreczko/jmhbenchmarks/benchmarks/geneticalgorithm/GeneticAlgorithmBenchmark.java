@@ -30,7 +30,7 @@ public class GeneticAlgorithmBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public Result runAlgorithm(Plan plan) {
         final SimpleGeneticAlgorithm simpleGeneticAlgorithm = new SimpleGeneticAlgorithm();
         return simpleGeneticAlgorithm.runAlgorithm(plan.populationSize, plan.solution, plan.maxGenerations);

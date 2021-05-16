@@ -33,7 +33,7 @@ public class StreamBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public List<Integer> sort(Plan plan) {
         return Arrays.stream(plan.array)
                 .sorted()
@@ -41,7 +41,7 @@ public class StreamBenchmark {
                 .collect(Collectors.toList());
     }
 
-    @Benchmark
+    //@Benchmark
     public List<Pair<Integer, Integer>> mapToPair(Plan plan) {
         return IntStream.range(0, plan.array.length)
                 .boxed()
@@ -49,7 +49,7 @@ public class StreamBenchmark {
                 .collect(Collectors.toList());
     }
 
-    @Benchmark
+    //@Benchmark
     public List<Integer> plusOne(Plan plan) {
         return Arrays.stream(plan.array)
                 .map(number -> number + 1)

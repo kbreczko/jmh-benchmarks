@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 public class FindLastBenchmark {
 
-    @Benchmark
+    //@Benchmark
     public int findLastPrefixUsingScanner1(FindLastState state) {
         final FindLastPrefixScanner1 scanner = new FindLastPrefixScanner1(state.searchedText);
 
@@ -25,7 +25,7 @@ public class FindLastBenchmark {
         return scanner.getLastValue();
     }
 
-    @Benchmark
+    //@Benchmark
     public int findLastPrefixUsingScanner2(FindLastState state) {
         final FindLastPrefixScanner2 scanner = new FindLastPrefixScanner2(state.searchedText);
 

@@ -29,7 +29,7 @@ public class SplittingListBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public List<Set<Integer>> split(Plan plan) {
         final List<Set<Integer>> result = new LinkedList<>();
         final int[] numbers = plan.numbers;

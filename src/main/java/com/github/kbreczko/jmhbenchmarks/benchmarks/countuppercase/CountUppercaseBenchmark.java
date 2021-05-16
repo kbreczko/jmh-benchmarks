@@ -31,7 +31,7 @@ public class CountUppercaseBenchmark {
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public long countUppercase(Plan plan) {
         long total = 0;
         for (int i = 0; i < plan.iterations; i++) {

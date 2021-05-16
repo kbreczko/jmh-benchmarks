@@ -21,12 +21,12 @@ public class AllocationBenchmark {
 
     @Benchmark
     public void createNewObjects(Plan plan, Blackhole blackhole) {
-        for (int i = 0; i < plan.numberOfObjects; i++) {
+        for (int i = 0; i < plan.numberOfObjects * 4; i++) {
             blackhole.consume(new byte[plan.size]);
         }
     }
 
-    @Benchmark
+    //@Benchmark
     public void fillHeap(Plan plan, Blackhole blackhole) {
         for (int iter = 0; iter < 4; iter++) {
             List<byte[]> objects = new ArrayList<>(plan.numberOfObjects);
