@@ -19,13 +19,6 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 public class AllocationBenchmark {
 
-    @Benchmark
-    public void createNewObjects(Plan plan, Blackhole blackhole) {
-        for (int i = 0; i < plan.numberOfObjects * 4; i++) {
-            blackhole.consume(new byte[plan.size]);
-        }
-    }
-
     @State(Scope.Benchmark)
     public static class Plan {
         @Param({"512", "1024", "2048", "10240", "102400", "1048576", "2097152", "10485760", "104857600"})
@@ -39,6 +32,13 @@ public class AllocationBenchmark {
             final long maxHeap = Runtime.getRuntime().maxMemory();
             numberOfObjects = (int) ((maxHeap * 0.70) / size);
             System.out.println("MaxHeap:" + maxHeap + ", numberOfObjects: " + numberOfObjects);
+        }
+    }
+
+    @Benchmark
+    public void createNewObjects(Plan plan, Blackhole blackhole) {
+        for (int i = 0; i < plan.numberOfObjects * 4; i++) {
+            blackhole.consume(new byte[plan.size]);
         }
     }
 
