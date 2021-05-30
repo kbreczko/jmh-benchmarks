@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * Implementacja algorytmu fibonacciego za pomocą rekurencji ogonowej.
  */
 
-@BenchmarkMode({Mode.Throughput, Mode.AverageTime})
+@BenchmarkMode({Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)

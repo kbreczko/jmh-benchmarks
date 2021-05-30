@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 /**
  * Zbiór testów utworzonych pod optymalizację kodu przez kompilator JIT.
  */
-@BenchmarkMode(value = {Mode.AverageTime, Mode.Throughput})
+@BenchmarkMode(value = {Mode.AverageTime})
 @Fork(value = 1)
 @Warmup(iterations = 5)
 @Measurement(iterations = 15)
