@@ -22,7 +22,6 @@ public class AllocationBenchmark {
     @State(Scope.Benchmark)
     public static class Plan {
         @Param({"512", "1024", "2048", "10240", "102400", "1048576", "2097152", "10485760", "104857600"})
-        // 512B, 1KB, 2KB, 10KB, 100KB, 1MB, 2MB, 10MB, 100MB
         public int size;
 
         public int numberOfObjects;
