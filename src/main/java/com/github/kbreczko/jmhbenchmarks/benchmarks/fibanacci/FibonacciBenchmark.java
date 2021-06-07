@@ -26,7 +26,7 @@ public class FibonacciBenchmark {
         return fib(fibonacciPlan.iterations, 0, 1);
     }
 
-    static long fib(long n, int a, int b) {
+    private long fib(long n, int a, int b) {
         if (n == 0) {
             return a;
         }
