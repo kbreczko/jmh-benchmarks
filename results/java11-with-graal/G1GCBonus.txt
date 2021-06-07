@@ -7,48 +7,6 @@
 # Measurement: 15 iterations, 10 s each
 # Timeout: 10 min per iteration
 # Threads: 1 thread, will synchronize iterations
-# Benchmark mode: Throughput, ops/time
-# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap
-
-# Run progress: 0.00% complete, ETA 00:36:40
-# Fork: 1 of 1
-# Warmup Iteration   1: 0.001 ops/us
-# Warmup Iteration   2: 0.001 ops/us
-# Warmup Iteration   3: 0.001 ops/us
-# Warmup Iteration   4: 0.001 ops/us
-# Warmup Iteration   5: 0.001 ops/us
-Iteration   1: 0.001 ops/us
-Iteration   2: 0.001 ops/us
-Iteration   3: 0.001 ops/us
-Iteration   4: 0.001 ops/us
-Iteration   5: 0.001 ops/us
-Iteration   6: 0.001 ops/us
-Iteration   7: 0.001 ops/us
-Iteration   8: 0.001 ops/us
-Iteration   9: 0.001 ops/us
-Iteration  10: 0.001 ops/us
-Iteration  11: 0.001 ops/us
-Iteration  12: 0.001 ops/us
-Iteration  13: 0.001 ops/us
-Iteration  14: 0.001 ops/us
-Iteration  15: 0.001 ops/us
-
-
-Result "com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap":
-  0.001 ±(99.9%) 0.001 ops/us [Average]
-  (min, avg, max) = (0.001, 0.001, 0.001), stdev = 0.001
-  CI (99.9%): [0.001, 0.001] (assumes normal distribution)
-
-
-# JMH version: 1.29
-# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
-# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
-# VM options: -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler -Xms2g -Xmx2g -XX:+AlwaysPreTouch
-# Blackhole mode: full + dont-inline hint
-# Warmup: 5 iterations, 10 s each
-# Measurement: 15 iterations, 10 s each
-# Timeout: 10 min per iteration
-# Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Average time, time/op
 # Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
 # Parameters: (size = 512)

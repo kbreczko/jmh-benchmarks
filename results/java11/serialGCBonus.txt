@@ -7,48 +7,6 @@
 # Measurement: 15 iterations, 10 s each
 # Timeout: 10 min per iteration
 # Threads: 1 thread, will synchronize iterations
-# Benchmark mode: Throughput, ops/time
-# Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap
-
-# Run progress: 0.00% complete, ETA 00:36:40
-# Fork: 1 of 1
-# Warmup Iteration   1: 0.003 ops/us
-# Warmup Iteration   2: 0.003 ops/us
-# Warmup Iteration   3: 0.003 ops/us
-# Warmup Iteration   4: 0.003 ops/us
-# Warmup Iteration   5: 0.004 ops/us
-Iteration   1: 0.004 ops/us
-Iteration   2: 0.004 ops/us
-Iteration   3: 0.004 ops/us
-Iteration   4: 0.004 ops/us
-Iteration   5: 0.004 ops/us
-Iteration   6: 0.004 ops/us
-Iteration   7: 0.004 ops/us
-Iteration   8: 0.004 ops/us
-Iteration   9: 0.004 ops/us
-Iteration  10: 0.004 ops/us
-Iteration  11: 0.004 ops/us
-Iteration  12: 0.004 ops/us
-Iteration  13: 0.004 ops/us
-Iteration  14: 0.004 ops/us
-Iteration  15: 0.004 ops/us
-
-
-Result "com.github.kbreczko.jmhbenchmarks.benchmarks.array.ArrayBenchmark.swap":
-  0.004 ±(99.9%) 0.001 ops/us [Average]
-  (min, avg, max) = (0.004, 0.004, 0.004), stdev = 0.001
-  CI (99.9%): [0.004, 0.004] (assumes normal distribution)
-
-
-# JMH version: 1.29
-# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
-# VM invoker: /home/kamykbb/jdk-11.0.11+9/bin/java
-# VM options: -Xms2g -Xmx2g -XX:+AlwaysPreTouch -XX:+UseSerialGC
-# Blackhole mode: full + dont-inline hint
-# Warmup: 5 iterations, 10 s each
-# Measurement: 15 iterations, 10 s each
-# Timeout: 10 min per iteration
-# Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Average time, time/op
 # Benchmark: com.github.kbreczko.jmhbenchmarks.benchmarks.allocation.AllocationBenchmark.createNewObjects
 # Parameters: (size = 512)
@@ -658,7 +616,6 @@ the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from th
 Do not assume the numbers tell you what you want them to tell.
 
 Benchmark                                                     (size)   Mode  Cnt       Score      Error   Units
-c.g.k.j.b.array.ArrayBenchmark.swap                              N/A  thrpt   15       0.004 ±    0.001  ops/us
 c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects        512   avgt   15  636461.620 ± 1012.419   us/op
 c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects       1024   avgt   15  904902.979 ± 7826.835   us/op
 c.g.k.j.b.allocation.AllocationBenchmark.createNewObjects       2048   avgt   15  968487.370 ± 2248.553   us/op
