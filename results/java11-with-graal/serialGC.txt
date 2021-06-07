@@ -1694,13 +1694,6 @@ c.g.k.j.b.countuppercase.CountUppercaseBenchmark.countUppercase                 
 c.g.k.j.b.fibanacci.FibonacciBenchmark.runFibonacci                                     521       N/A        N/A   avgt   15        0.678 ±      0.001   us/op
 c.g.k.j.b.fibanacci.FibonacciBenchmark.runFibonacci                                    1153       N/A        N/A   avgt   15        1.610 ±      0.001   us/op
 c.g.k.j.b.fibanacci.FibonacciBenchmark.runFibonacci                                    2021       N/A        N/A   avgt   15        2.796 ±      0.001   us/op
-c.g.k.j.b.findlast.FindLastBenchmark.findLastPrefixUsingScanner1                        N/A       N/A         10   avgt   15        0.052 ±      0.001   us/op
-c.g.k.j.b.findlast.FindLastBenchmark.findLastPrefixUsingScanner1                        N/A       N/A        100   avgt   15        0.490 ±      0.001   us/op
-c.g.k.j.b.findlast.FindLastBenchmark.findLastPrefixUsingScanner1                        N/A       N/A       1000   avgt   15        5.052 ±      0.045   us/op
-c.g.k.j.b.findlast.FindLastBenchmark.findLastPrefixUsingScanner2                        N/A       N/A         10   avgt   15        0.048 ±      0.001   us/op
-c.g.k.j.b.findlast.FindLastBenchmark.findLastPrefixUsingScanner2                        N/A       N/A        100   avgt   15        0.426 ±      0.003   us/op
-c.g.k.j.b.findlast.FindLastBenchmark.findLastPrefixUsingScanner2                        N/A       N/A       1000   avgt   15        4.729 ±      0.187   us/op
-c.g.k.j.b.geneticalgorithm.GeneticAlgorithmBenchmark.runAlgorithm                       N/A       N/A        N/A   avgt   15    14456.741 ±      8.601   us/op
 c.g.k.j.b.levenshtein.LevenshteinDistanceBenchmark.runAlgorithm                         N/A       100        N/A   avgt   15      395.615 ±      1.052   us/op
 c.g.k.j.b.levenshtein.LevenshteinDistanceBenchmark.runAlgorithm                         N/A      1000        N/A   avgt   15    39704.467 ±     44.358   us/op
 c.g.k.j.b.levenshtein.LevenshteinDistanceBenchmark.runAlgorithm                         N/A     10000        N/A   avgt   15  4127083.037 ±  35735.224   us/op
